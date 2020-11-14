@@ -11,7 +11,7 @@
     <Authors>Kinjal Das</Authors>
     <Company>GitHub</Company>
     <PackageDescription>This package adds a Release!</PackageDescription>
-    <RepositoryUrl>https://github.com/KinjalDas/Paint_Application_WPF_MVVM</RepositoryUrl>
+    <RepositoryUrl>http://github.com/KinjalDas/Paint_Application_WPF_MVVM</RepositoryUrl>
 	
   </PropertyGroup>
 
@@ -20,6 +20,9 @@
     <None Remove="Color_Picker.png" />
     <None Remove="Images\black_square.png" />
     <None Remove="Images\Color_Picker.png" />
+    <None Remove="Images\down-arrow.png" />
+    <None Remove="Images\ellipse.png" />
+    <None Remove="Images\LINE.png" />
     <None Remove="Images\rectangle.png" />
     <None Remove="Images\red_square.png" />
     <None Remove="Images\white_square.png" />
@@ -29,14 +32,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Images\Color_Picker.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Images\black_square.png" />
     <Resource Include="Images\Color_Picker.png" />
+    <Resource Include="Images\down-arrow.png" />
+    <Resource Include="Images\ellipse.png" />
+    <Resource Include="Images\LINE.png" />
     <Resource Include="Images\rectangle.png" />
     <Resource Include="Images\red_square.png" />
     <Resource Include="Images\white_square.png" />
