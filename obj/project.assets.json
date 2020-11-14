@@ -15,7 +15,7 @@
     "version": "1.0.0",
     "restore": {
       "projectUniqueName": "C:\\Users\\daski\\Desktop\\MyProjects\\ASP.NET\\WPF_MVVM_Paint\\Paint_Application_WPF_MVVM\\DrongoAI.csproj",
-      "projectName": "DrongoAI",
+      "projectName": "Paint_Application_WPF_MVVM",
       "projectPath": "C:\\Users\\daski\\Desktop\\MyProjects\\ASP.NET\\WPF_MVVM_Paint\\Paint_Application_WPF_MVVM\\DrongoAI.csproj",
       "packagesPath": "C:\\Users\\daski\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\daski\\Desktop\\MyProjects\\ASP.NET\\WPF_MVVM_Paint\\Paint_Application_WPF_MVVM\\obj\\",
@@ -33,6 +33,7 @@
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.pkg.github.com/KinjalDas/index.json": {},
         "https://www.nuget.org/api/v2/curated-feeds/microsoftdotnet/": {}
       },
       "frameworks": {
