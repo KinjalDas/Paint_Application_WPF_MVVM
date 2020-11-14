@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="DrongoAI.Views.ToolbarView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DrongoAI.Views"
+             mc:Ignorable="d" d:DesignWidth="800">
+    <ToolBar Height="36" VerticalAlignment="Top" Margin="0,0,0,0">
+        <Button x:Name="create_Rectangle" IsEnabled="{Binding Path=toolbar.isDrawModeDisabled}" BorderBrush="CadetBlue" Content="Create Rectangle" Command="{Binding createShape}" CommandParameter="Rectangle" Width="121" Height="22"/>
+        <Button x:Name="create_Ellipse" IsEnabled="{Binding Path=toolbar.isDrawModeDisabled}" BorderBrush="CadetBlue" Content="Create Ellipse" Command="{Binding createShape}" CommandParameter="Ellipse" Width="90" HorizontalAlignment="Left"/>
+        <Button x:Name="create_Line" IsEnabled="{Binding Path=toolbar.isDrawModeDisabled}" BorderBrush="CadetBlue" Content="Create Line" Command="{Binding createShape}" CommandParameter="Line" Width="84"/>
+        <Grid>
+            <CheckBox x:Name="draw_Lines" VerticalAlignment="Center" Command="{Binding drawShape}" Width="84">Draw Line</CheckBox>
+        </Grid>
+        <Menu x:Name="Color_Picker" Height="24" Visibility="{Binding Path=toolbar.visible}">
+            <MenuItem BorderBrush="CadetBlue" Header="Color Picker" Height="24">
+                <MenuItem.Icon>
+                    <Image Source="../Images/Color_picker.png"/>
+                </MenuItem.Icon>
+                <MenuItem Name="White" Command="{Binding changeColor}" CommandParameter="White" Header="_No Color">
+                    <MenuItem.Icon>
+                        <Image Source="../Images/white_square.png" Width="10" Height="10"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="Black" Command="{Binding changeColor}" CommandParameter="Black" Header="_Black">
+                    <MenuItem.Icon>
+                        <Image Source="../Images/black_square.png" Width="10" Height="10"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="Gray" Command="{Binding changeColor}" CommandParameter="Gray" Header="_Grey"/>
+                <MenuItem Name="Yellow" Command="{Binding changeColor}" CommandParameter="Yellow" Header="_Yellow"/>
+                <MenuItem Name="Red" Command="{Binding changeColor}" CommandParameter="Red" Header="_Red">
+                    <MenuItem.Icon>
+                        <Image Source="../Images/red_square.png" Width="10" Height="10"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="Blue" Command="{Binding changeColor}" CommandParameter="Blue" Header="_Blue"/>
+                <MenuItem Name="Green" Command="{Binding changeColor}" CommandParameter="Green" Header="_Green"/>
+                <MenuItem Name="Brown" Command="{Binding changeColor}" CommandParameter="Brown" Header="_Brown"/>
+                <MenuItem Name="Pink" Command="{Binding changeColor}" CommandParameter="Pink" Header="_Pink"/>
+                <MenuItem Name="Orange" Command="{Binding changeColor}" CommandParameter="Orange" Header="_Orange"/>
+                <MenuItem Name="Purple" Command="{Binding changeColor}" CommandParameter="Purple" Header="_Purple"/>
+            </MenuItem>
+        </Menu>
+        <Button x:Name="Expand" BorderBrush="CadetBlue" Command="{Binding changeSize}" CommandParameter="Expand" Content="Expand" Visibility="{Binding Path=toolbar.visible}"/>
+        <Button x:Name="Contract" BorderBrush="CadetBlue" Command="{Binding changeSize}" CommandParameter="Contract" Content="Contract" Visibility="{Binding Path=toolbar.visible}"/>
+    </ToolBar>
+</UserControl>

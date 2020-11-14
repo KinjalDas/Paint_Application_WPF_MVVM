@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="black_square.png" />
+    <None Remove="Color_Picker.png" />
+    <None Remove="Images\black_square.png" />
+    <None Remove="Images\Color_Picker.png" />
+    <None Remove="Images\rectangle.png" />
+    <None Remove="Images\red_square.png" />
+    <None Remove="Images\white_square.png" />
+    <None Remove="rectangle.png" />
+    <None Remove="red_square.png" />
+    <None Remove="white_square.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\Color_Picker.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\black_square.png" />
+    <Resource Include="Images\Color_Picker.png" />
+    <Resource Include="Images\rectangle.png" />
+    <Resource Include="Images\red_square.png" />
+    <Resource Include="Images\white_square.png" />
+  </ItemGroup>
+
+</Project>
