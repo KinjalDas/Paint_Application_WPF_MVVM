@@ -5,6 +5,14 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
     <Platforms>AnyCPU;x64;x86</Platforms>
+	
+	<PackageId>Paint_Application_WPF_MVVM</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Kinjal Das</Authors>
+    <Company>GitHub</Company>
+    <PackageDescription>This package adds a Release!</PackageDescription>
+    <RepositoryUrl>https://github.com/KinjalDas/Paint_Application_WPF_MVVM</RepositoryUrl>
+	
   </PropertyGroup>
 
   <ItemGroup>
