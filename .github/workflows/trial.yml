@@ -45,5 +45,5 @@ jobs:
           
       - uses: actions/upload-artifact@v2
         with: 
-          name: my-artifact
-          path: bin/Release/netcoreapp3.1/publish # or path/to/artifact
+          name: Project Build
+          path: bin/Release/netcoreapp3.1/ # or path/to/artifact
