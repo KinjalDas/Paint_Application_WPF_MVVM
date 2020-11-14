@@ -40,7 +40,10 @@ jobs:
           cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"  
           .\MSBuild.exe $Env:GITHUB_WORKSPACE\DrongoAI.sln -p:Configuration=Release
           
+      - name: Publish
+        run: dotnet publish
+          
       - uses: actions/upload-artifact@v2
         with: 
           name: my-artifact
-          path: $Env:GITHUB_WORKSPACE\bin\Release\netcoreapp3.1\ # or path/to/artifact
+          path: $Env:GITHUB_WORKSPACE\bin\Release\ # or path/to/artifact
