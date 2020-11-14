@@ -39,3 +39,6 @@ jobs:
         run: |
           cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"  
           .\MSBuild.exe $Env:GITHUB_WORKSPACE\DrongoAI.sln -p:Configuration=Release
+          
+      - name: Publish
+        run: dotnet publish
