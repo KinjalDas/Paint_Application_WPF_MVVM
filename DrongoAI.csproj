@@ -38,6 +38,7 @@
     <None Remove="Images\red_square.png" />
     <None Remove="Images\white_square.png" />
     <None Remove="Images\yellow_square.png" />
+    <None Remove="paint.png" />
     <None Remove="rectangle.png" />
     <None Remove="red_square.png" />
     <None Remove="white_square.png" />
@@ -64,6 +65,7 @@
     <Resource Include="Images\red_square.png" />
     <Resource Include="Images\white_square.png" />
     <Resource Include="Images\yellow_square.png" />
+    <Resource Include="paint.png" />
   </ItemGroup>
 
 </Project>
