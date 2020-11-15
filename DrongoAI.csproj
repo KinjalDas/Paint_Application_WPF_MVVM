@@ -19,13 +19,25 @@
     <None Remove="black_square.png" />
     <None Remove="Color_Picker.png" />
     <None Remove="Images\black_square.png" />
+    <None Remove="Images\blue_square.png" />
+    <None Remove="Images\brown_square.png" />
     <None Remove="Images\Color_Picker.png" />
+    <None Remove="Images\delete.png" />
     <None Remove="Images\down-arrow.png" />
     <None Remove="Images\ellipse.png" />
+    <None Remove="Images\gray_square.png" />
+    <None Remove="Images\green_square.png" />
     <None Remove="Images\LINE.png" />
+    <None Remove="Images\minus_sign.png" />
+    <None Remove="Images\orange_square.png" />
+    <None Remove="Images\pencil.png" />
+    <None Remove="Images\pink_square.png" />
+    <None Remove="Images\plus_sign.png" />
+    <None Remove="Images\purple_square.png" />
     <None Remove="Images\rectangle.png" />
     <None Remove="Images\red_square.png" />
     <None Remove="Images\white_square.png" />
+    <None Remove="Images\yellow_square.png" />
     <None Remove="rectangle.png" />
     <None Remove="red_square.png" />
     <None Remove="white_square.png" />
@@ -33,13 +45,25 @@
 
   <ItemGroup>
     <Resource Include="Images\black_square.png" />
+    <Resource Include="Images\blue_square.png" />
+    <Resource Include="Images\brown_square.png" />
     <Resource Include="Images\Color_Picker.png" />
+    <Resource Include="Images\delete.png" />
     <Resource Include="Images\down-arrow.png" />
     <Resource Include="Images\ellipse.png" />
+    <Resource Include="Images\gray_square.png" />
+    <Resource Include="Images\green_square.png" />
     <Resource Include="Images\LINE.png" />
+    <Resource Include="Images\minus_sign.png" />
+    <Resource Include="Images\orange_square.png" />
+    <Resource Include="Images\pencil.png" />
+    <Resource Include="Images\pink_square.png" />
+    <Resource Include="Images\plus_sign.png" />
+    <Resource Include="Images\purple_square.png" />
     <Resource Include="Images\rectangle.png" />
     <Resource Include="Images\red_square.png" />
     <Resource Include="Images\white_square.png" />
+    <Resource Include="Images\yellow_square.png" />
   </ItemGroup>
 
 </Project>

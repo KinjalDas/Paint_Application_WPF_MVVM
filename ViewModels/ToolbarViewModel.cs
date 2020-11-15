@@ -15,6 +15,7 @@ namespace DrongoAI.ViewModels
         public ICommandImpl changeSize { get; set; }
         public ICommandImpl changeColor { get; set; }
         public ICommandImpl drawShape { get; set; }
+        public ICommandImpl removeShape { get; set; }
 
         public ToolbarViewModel(MainWindowsViewModel mainvm)
         {
@@ -24,6 +25,7 @@ namespace DrongoAI.ViewModels
             changeSize = new ICommandImpl(obj => ChangeShapeSize((string)obj));
             changeColor = new ICommandImpl(obj => ChangeShapeColor((string)obj));
             drawShape = new ICommandImpl(obj => DrawShape());
+            removeShape = new ICommandImpl(obj => RemoveShape());
         }
 
         private void CreateShape(string shapeType)
@@ -47,6 +49,11 @@ namespace DrongoAI.ViewModels
             _mainvm.canvasVM.DrawShape();
             if (_mainvm.selEl == null)
             { toolbar.isShapeSelected = false; }
+        }
+
+        private void RemoveShape()
+        {
+            _mainvm.canvasVM.RemoveShape();
         }
     }
 }

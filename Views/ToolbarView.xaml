@@ -6,14 +6,22 @@
              xmlns:local="clr-namespace:DrongoAI.Views"
              mc:Ignorable="d" d:DesignWidth="800">
     <ToolBar Height="36" VerticalAlignment="Top" Margin="0,0,0,0">
-        <Button x:Name="create_Rectangle" IsEnabled="{Binding Path=toolbar.isDrawModeDisabled}" BorderBrush="CadetBlue" Content="Create Rectangle" Command="{Binding createShape}" CommandParameter="Rectangle" Width="121" Height="22"/>
-        <Button x:Name="create_Ellipse" IsEnabled="{Binding Path=toolbar.isDrawModeDisabled}" BorderBrush="CadetBlue" Content="Create Ellipse" Command="{Binding createShape}" CommandParameter="Ellipse" Width="90" HorizontalAlignment="Left"/>
-        <Button x:Name="create_Line" IsEnabled="{Binding Path=toolbar.isDrawModeDisabled}" BorderBrush="CadetBlue" Content="Create Line" Command="{Binding createShape}" CommandParameter="Line" Width="84"/>
+        <Button x:Name="create_Rectangle" IsEnabled="{Binding Path=toolbar.isDrawModeDisabled}" Command="{Binding createShape}" CommandParameter="Rectangle" Width="60">
+            <Image Source="../Images/rectangle.png"/>
+        </Button>
+        <Button x:Name="create_Ellipse" IsEnabled="{Binding Path=toolbar.isDrawModeDisabled}" Command="{Binding createShape}" CommandParameter="Ellipse" Width="60">
+            <Image Source="../Images/ellipse.png"/>
+        </Button>
+        <Button x:Name="create_Line" IsEnabled="{Binding Path=toolbar.isDrawModeDisabled}" Command="{Binding createShape}" CommandParameter="Line" Width="60">
+            <Image Source="../Images/LINE.png"/>
+        </Button>
         <Grid>
-            <CheckBox x:Name="draw_Lines" VerticalAlignment="Center" Command="{Binding drawShape}" Width="84">Draw Line</CheckBox>
+            <CheckBox x:Name="draw_Lines" VerticalContentAlignment="Center" Command="{Binding drawShape}" Width="84">
+                <Image Source="../Images/pencil.png"/>
+            </CheckBox>
         </Grid>
         <Menu x:Name="Color_Picker" Height="24" Visibility="{Binding Path=toolbar.visible}">
-            <MenuItem BorderBrush="CadetBlue" Header="Color Picker" Height="24">
+            <MenuItem Header="Color Picker" Height="24">
                 <MenuItem.Icon>
                     <Image Source="../Images/Color_picker.png"/>
                 </MenuItem.Icon>
@@ -27,22 +35,61 @@
                         <Image Source="../Images/black_square.png" Width="10" Height="10"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Name="Gray" Command="{Binding changeColor}" CommandParameter="Gray" Header="_Grey"/>
-                <MenuItem Name="Yellow" Command="{Binding changeColor}" CommandParameter="Yellow" Header="_Yellow"/>
+                <MenuItem Name="Gray" Command="{Binding changeColor}" CommandParameter="Gray" Header="_Gray">
+                    <MenuItem.Icon>
+                        <Image Source="../Images/gray_square.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="Yellow" Command="{Binding changeColor}" CommandParameter="Yellow" Header="_Yellow">
+                    <MenuItem.Icon>
+                        <Image Source="../Images/yellow_square.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
                 <MenuItem Name="Red" Command="{Binding changeColor}" CommandParameter="Red" Header="_Red">
                     <MenuItem.Icon>
                         <Image Source="../Images/red_square.png" Width="10" Height="10"/>
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Name="Blue" Command="{Binding changeColor}" CommandParameter="Blue" Header="_Blue"/>
-                <MenuItem Name="Green" Command="{Binding changeColor}" CommandParameter="Green" Header="_Green"/>
-                <MenuItem Name="Brown" Command="{Binding changeColor}" CommandParameter="Brown" Header="_Brown"/>
-                <MenuItem Name="Pink" Command="{Binding changeColor}" CommandParameter="Pink" Header="_Pink"/>
-                <MenuItem Name="Orange" Command="{Binding changeColor}" CommandParameter="Orange" Header="_Orange"/>
-                <MenuItem Name="Purple" Command="{Binding changeColor}" CommandParameter="Purple" Header="_Purple"/>
+                <MenuItem Name="Blue" Command="{Binding changeColor}" CommandParameter="Blue" Header="_Blue">
+                    <MenuItem.Icon>
+                        <Image Source="../Images/blue_square.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="Green" Command="{Binding changeColor}" CommandParameter="Green" Header="_Green">
+                    <MenuItem.Icon>
+                        <Image Source="../Images/green_square.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="Brown" Command="{Binding changeColor}" CommandParameter="Brown" Header="_Brown">
+                    <MenuItem.Icon>
+                        <Image Source="../Images/brown_square.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="Pink" Command="{Binding changeColor}" CommandParameter="Pink" Header="_Pink">
+                    <MenuItem.Icon>
+                        <Image Source="../Images/pink_square.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="Orange" Command="{Binding changeColor}" CommandParameter="Orange" Header="_Orange">
+                    <MenuItem.Icon>
+                        <Image Source="../Images/orange_square.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Name="Purple" Command="{Binding changeColor}" CommandParameter="Purple" Header="_Purple">
+                    <MenuItem.Icon>
+                        <Image Source="../Images/purple_square.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
         </Menu>
-        <Button x:Name="Expand" BorderBrush="CadetBlue" Command="{Binding changeSize}" CommandParameter="Expand" Content="Expand" Visibility="{Binding Path=toolbar.visible}"/>
-        <Button x:Name="Contract" BorderBrush="CadetBlue" Command="{Binding changeSize}" CommandParameter="Contract" Content="Contract" Visibility="{Binding Path=toolbar.visible}"/>
+        <Button x:Name="Expand" Command="{Binding changeSize}" CommandParameter="Expand" Visibility="{Binding Path=toolbar.visible}">
+            <Image Source="../Images/plus_sign.png"/>
+        </Button>
+        <Button x:Name="Contract" Command="{Binding changeSize}" CommandParameter="Contract" Visibility="{Binding Path=toolbar.visible}">
+            <Image Source="../Images/minus_sign.png"/>
+        </Button>
+        <Button x:Name="Delete" Command="{Binding removeShape}" Visibility="{Binding Path=toolbar.visible}">
+            <Image Source="../Images/delete.png"/>
+        </Button>
     </ToolBar>
 </UserControl>

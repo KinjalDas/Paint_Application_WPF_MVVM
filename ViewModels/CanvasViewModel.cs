@@ -73,19 +73,19 @@ namespace DrongoAI.ViewModels
                     _mainvm.selEl = null;
                     _mainvm.toolbarVM.toolbar.isShapeSelected = false;
                 }
+            }
 
-                if (_mainvm.toolbarVM.toolbar.isDrawModeSelected)
-                {
-                    DrawingBoard.drawing = true;
-                    DrawingBoard.startPoint = Mouse.GetPosition(DrawingBoard.canvas);
-                    DrawingBoard.line = new Polyline();
-                    DrawingBoard.line.Stroke = new SolidColorBrush(Colors.Black);
-                    DrawingBoard.line.StrokeThickness = 5;
-                    DrawingBoard.line.MouseDown += ClickShape;
-                    DrawingBoard.line.MouseUp += ShapeReleased;
-                    DrawingBoard.line.MouseMove += ShapeMove;
-                    DrawingBoard.canvas.Children.Add(DrawingBoard.line);
-                }
+            if (_mainvm.toolbarVM.toolbar.isDrawModeSelected)
+            {
+                DrawingBoard.drawing = true;
+                DrawingBoard.startPoint = Mouse.GetPosition(DrawingBoard.canvas);
+                DrawingBoard.line = new Polyline();
+                DrawingBoard.line.Stroke = new SolidColorBrush(Colors.Black);
+                DrawingBoard.line.StrokeThickness = 5;
+                DrawingBoard.line.MouseDown += ClickShape;
+                DrawingBoard.line.MouseUp += ShapeReleased;
+                DrawingBoard.line.MouseMove += ShapeMove;
+                DrawingBoard.canvas.Children.Add(DrawingBoard.line);
             }
         }
 
@@ -123,17 +123,22 @@ namespace DrongoAI.ViewModels
 
         private void ClickShape(object sender, RoutedEventArgs e)
         {
-            _mainvm.toolbarVM.toolbar.isShapeSelected = true;
-            UIElement el = (UIElement)sender;
-            if ((_mainvm.selEl != null) && (el != _mainvm.selEl))
+            if (_mainvm.toolbarVM.toolbar.isDrawModeDisabled) {
+                _mainvm.toolbarVM.toolbar.isShapeSelected = true;
+                UIElement el = (UIElement)sender;
+                if ((_mainvm.selEl != null) && (el != _mainvm.selEl))
+                {
+                    _mainvm.selEl.Opacity = 1;
+                    _mainvm.selEl.ReleaseMouseCapture();
+                    _mainvm.selEl = null;
+                }
+                _mainvm.selEl = el;
+                _mainvm.selEl.CaptureMouse();
+                _mainvm.selEl.Opacity = 0.475;
+            } else
             {
-                _mainvm.selEl.Opacity = 1;
-                _mainvm.selEl.ReleaseMouseCapture();
-                _mainvm.selEl = null;
+                CanvasClicked(sender, e);
             }
-            _mainvm.selEl = el;
-            _mainvm.selEl.CaptureMouse();
-            _mainvm.selEl.Opacity = 0.475;
         }
 
         public void ChangeShapeColor(string color)
@@ -217,8 +222,8 @@ namespace DrongoAI.ViewModels
                     Rectangle rect = new Rectangle();
                     rect.Stroke = new SolidColorBrush(Colors.Red);
                     rect.Fill = new SolidColorBrush(Colors.Red);
-                    rect.Width = 50;
-                    rect.Height = 50;
+                    rect.Width = 60;
+                    rect.Height = 40;
                     Canvas.SetLeft(rect, rand.Next(400));
                     Canvas.SetTop(rect, rand.Next(400));
                     rect.MouseDown += ClickShape;
@@ -258,6 +263,16 @@ namespace DrongoAI.ViewModels
                     break;
                 default:
                     break;
+            }
+        }
+
+        public void RemoveShape()
+        {
+            if(_mainvm.selEl != null)
+            {
+                DrawingBoard.canvas.Children.Remove(_mainvm.selEl);
+                _mainvm.selEl = null;
+                _mainvm.toolbarVM.toolbar.isShapeSelected = false;
             }
         }
     }
